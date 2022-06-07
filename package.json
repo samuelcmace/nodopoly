@@ -1,0 +1,14 @@
+{
+  "name": "monopoly-websockets",
+  "version": "0.0.1",
+  "description": "Monopoly Using Nodejs and Websockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Mace",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
