@@ -14,18 +14,18 @@ const pool = mariadb.createPool({
 
 // Setup MariaDB Queries
 
-async function LookupUser() {
+async function LookupUser(query) {
   let conn;
-  let queryResults;
+  let result;
 
   try {
     conn = await pool.getConnection();
-    queryResults = await conn.query("SHOW DATABASES;");
-    console.log(queryResults);
+    result = await conn.query(query);
   }
   
   finally {
-    if (conn) conn.release(); //release to pool
+    if (conn) conn.release();
+    return result;
   }
 }
 
@@ -57,8 +57,10 @@ app.get("/lobby/", (req, res) => {
 });
 
 app.post("/auth/", (req, res) => {
-  res.send("You posted " + req.body.username + " as the username and " + req.body.password + " as the password.");
-  LookupUser();
+  (async () => {
+    let result = await LookupUser("SHOW DATABASES;");
+    res.send(result);
+  })()
 });
 
 // Listen for Express Server Connections
