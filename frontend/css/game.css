@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background-color: lightgreen;
+  font-family: sans-serif;
+}
+
+#content {
+  margin: 1em 5em;
+  text-align: center;
+  padding: 1em;
+  background-color: lightgray;
+  border-radius: 0.5em;
+  box-shadow: 1em 1em 1em gray;
+  min-width: 1024px;
+}
+
+#board {
+  margin: 0;
+  width: 800px;
+  height: 600px;
+}

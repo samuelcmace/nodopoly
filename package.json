@@ -9,6 +9,7 @@
   "author": "Samuel Mace",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mariadb": "^3.0.0"
   }
 }
